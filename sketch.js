@@ -4,6 +4,9 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
+var rect1;
+var rect2;
+var rect3;
 
 function preload()
 {
@@ -42,6 +45,12 @@ function setup() {
 
 	Engine.run(engine);
   
+	rect1 = createSprite(270,610,20,100);
+	rect1.shapeColor="red";
+	rect2 = createSprite(480,610,20,100);
+	rect2.shapeColor="red";
+	rect3 = createSprite(370,650,200,20);
+	rect3.shapeColor="red";
 }
 
 
@@ -57,7 +66,7 @@ function draw() {
 }
 function keyPressed (){
 	if(keyCode===DOWN_ARROW){
-		Matter.isStatic(packageBody,false);
+		Matter.Body.setStatic(packageBody,false);
 	  }
 
 }
